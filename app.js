@@ -1,12 +1,12 @@
-import express from 'express';
+import express from "express";
 
-import { HTMX_KNOWLEDGE } from './data/htmx-info.js';
+import { HTMX_KNOWLEDGE } from "./data/htmx-info.js";
 
 const app = express();
 
-app.use(express.static('public'));
+app.use(express.static("public"));
 
-app.get('/', (req, res) => {
+app.get("/", (req, res) => {
   res.send(`
     <!DOCTYPE html>
     <html>
@@ -18,6 +18,7 @@ app.get('/', (req, res) => {
           
         />
         <link rel="icon" href="/icon.png" />
+        <script src="/htmx.js" defer></script>
         <link rel="stylesheet" href="/main.css" />
       </head>
       <body>
@@ -28,10 +29,18 @@ app.get('/', (req, res) => {
 
         <main>
           <p>HTMX is a JavaScript library that you use without writing JavaScript code.</p>
-          <button>Learn More</button>
+          <button hx-get="/info" hx-swap="outerHTML">Learn More</button>
         </main>
       </body>
     </html>
+  `);
+});
+
+app.get("/info", (req, res) => {
+  res.send(`
+    <ul>
+      ${HTMX_KNOWLEDGE.map((info) => `<li>${info}</li>`).join("")}
+    </ul>
   `);
 });
 
