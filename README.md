@@ -9,14 +9,18 @@ Simple app made with HTMX to take notes on what I learned while studying HTMX.
 
 ## Project setup
 
-```
+Make sure to install dependencies:
+
+```bash
 npm install
 ```
 
-### Compiles and hot-reloads for development
+## Development Server
 
-```
-npm staart
+Start the development server on `http://localhost:3000`:
+
+```bash
+npm start
 ```
 
 ## Built With
