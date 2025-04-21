@@ -7,7 +7,10 @@ Simple app made with HTMX to take notes on what I learned while studying HTMX.
 ![Notes](./src/assets/notes.png)
 
 
-## Project setup
+## Getting Started
+
+
+### Project setup
 
 Make sure to install dependencies:
 
@@ -15,7 +18,7 @@ Make sure to install dependencies:
 npm install
 ```
 
-## Development Server
+### Development Server
 
 Start the development server on `http://localhost:3000`:
 
